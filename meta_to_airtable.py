@@ -48,4 +48,4 @@ if response.status_code == 200:
         else:
             print(f"Failed to add campaign data for: {campaign.get('campaign_name')}, Error: {airtable_response.content}")
 else:
-    print(f"Failed to fetch data from Meta Ads API, Error: {response.content}”)	
+    print(f"Failed to fetch data from Meta Ads API, Error: {response.content}")	
