@@ -18,11 +18,21 @@ airtable_headers = {
     'Content-Type': 'application/json'
 }
 
+from datetime import datetime, timedelta
+
+# Calcola l'intervallo di date degli ultimi 7 giorni
+today = datetime.now()
+seven_days_ago = today - timedelta(days=7)
+
+# Converti le date in stringhe nel formato richiesto
+since = seven_days_ago.strftime('%Y-%m-%d')
+until = today.strftime('%Y-%m-%d')
+
 # Parameters for Meta Ads API request
 meta_params = {
     'access_token': META_ACCESS_TOKEN,
     'fields': 'impressions,clicks,spend',  # Define the fields you need
-    'time_range': json.dumps({'since': '2024-01-01', 'until': '2024-12-31'})
+    'time_range': json.dumps({'since': since, 'until': until}),
 }
 
 # Get data from Meta Ads API
