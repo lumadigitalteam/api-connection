@@ -33,6 +33,7 @@ meta_params = {
     'access_token': META_ACCESS_TOKEN,
     'fields': 'impressions,clicks,spend',  # Define the fields you need
     'time_range': json.dumps({'since': since, 'until': until}),
+    'level': 'campaign'  # Assicurati di includere 'level' per richiedere i dati a livello di campagna
 }
 
 # Get data from Meta Ads API
