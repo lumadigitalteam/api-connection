@@ -31,7 +31,7 @@ until = today.strftime('%Y-%m-%d')
 # Parameters for Meta Ads API request
 meta_params = {
     'access_token': META_ACCESS_TOKEN,
-    'fields': 'impressions,clicks,spend',  # Define the fields you need
+    'fields': 'campaign_name,impressions,clicks,spend',  # Define the fields you need
     'time_range': json.dumps({'since': since, 'until': until}),
     'level': 'campaign'  # Assicurati di includere 'level' per richiedere i dati a livello di campagna
 }
@@ -45,6 +45,7 @@ if response.status_code == 200:
     for campaign in meta_data.get('data', []):
         airtable_data = {
             'fields': {
+                'Campaign Name': campaign.get('campaign_name'),
                 'Impressions': int(campaign.get('impressions', 0)),
                 'Clicks': int(campaign.get('clicks', 0)),
                 'Spend': float(campaign.get('spend', 0.0))
