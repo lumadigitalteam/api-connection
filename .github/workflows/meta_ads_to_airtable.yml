@@ -3,7 +3,7 @@ name: Meta Ads to Airtable Automation
 on:
   schedule:
     - cron: '0 9 * * *'  # Esegue ogni giorno alle 9:00 UTC
-
+workflow_dispatch:  # Permette l'esecuzione manuale del workflow
 jobs:
   run-script:
     runs-on: ubuntu-latest
