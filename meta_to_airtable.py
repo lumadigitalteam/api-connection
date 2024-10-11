@@ -51,6 +51,7 @@ if response.status_code == 200:
                 'Impressions': int(campaign.get('impressions', 0)),
                 'Clicks': int(campaign.get('clicks', 0)),
                 'Spend': float(campaign.get('spend', 0.0))
+                'Date': yesterday.strftime('%Y-%m-%d')  # Aggiungi la data del giorno precedente
             }
         }
 
