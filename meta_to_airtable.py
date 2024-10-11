@@ -10,7 +10,7 @@ META_AD_ACCOUNT_ID = 'act_537133347493122'
 
 # URLs for API requests
 AIRTABLE_URL = f'https://api.airtable.com/v0/{AIRTABLE_BASE_ID}/{AIRTABLE_TABLE_NAME}'
-META_URL = f'https://graph.facebook.com/v14.0/{META_AD_ACCOUNT_ID}/insights?&level=campaign'
+META_URL = f'https://graph.facebook.com/v14.0/{META_AD_ACCOUNT_ID}/insights'
 
 # Headers for Airtable API
 airtable_headers = {
