@@ -20,13 +20,15 @@ airtable_headers = {
 
 from datetime import datetime, timedelta
 
-# Calcola l'intervallo di date degli ultimi 7 giorni
-today = datetime.now()
-seven_days_ago = today - timedelta(days=7)
+from datetime import datetime, timedelta
 
-# Converti le date in stringhe nel formato richiesto
-since = seven_days_ago.strftime('%Y-%m-%d')
-until = today.strftime('%Y-%m-%d')
+# Calcola l'intervallo di date per il giorno precedente
+today = datetime.now()
+yesterday = today - timedelta(days=1)
+
+# Converti le date in stringhe nel formato richiesto per prendere solo il giorno precedente
+since = yesterday.strftime('%Y-%m-%d')
+until = yesterday.strftime('%Y-%m-%d')
 
 # Parameters for Meta Ads API request
 meta_params = {
