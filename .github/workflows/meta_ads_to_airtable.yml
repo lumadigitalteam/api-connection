@@ -3,7 +3,8 @@ name: Meta Ads to Airtable Automation
 on:
   schedule:
     - cron: '0 9 * * *'  # Esegue ogni giorno alle 9:00 UTC
-workflow_dispatch:  # Permette l'esecuzione manuale del workflow
+  workflow_dispatch:  # Permette l'esecuzione manuale del workflow
+
 jobs:
   run-script:
     runs-on: ubuntu-latest
@@ -22,9 +23,9 @@ jobs:
 
       - name: Run Python Script
         env:
-          AIRTABLE_PERSONAL_ACCESS_TOKEN: ${{ secrets.patEeGtwQq2jRDGoH }}
-          META_ACCESS_TOKEN: ${{ secrets.EAAM2gsgkLtkBO6OCmqrpWAFKbUYKUtiHq7yWumIqgleU7GGHPss4G38x8ru7DxLUXCPTSY507ZAialeysqVZBFS7ko8evppXQWonISA6yq80CHsaMUw7iLCoDKD6FPoYYX4XA9WZAzYFLpgPP4yJru7UNxXCOyUqsCXN8qCwMOrdDNModeRkUfYNkUZD }}
-          AIRTABLE_BASE_ID: ${{ secrets.ptfrZU0B5ztVSQ }}
-          META_AD_ACCOUNT_ID: ${{ secrets.53713334749312 }}
+          AIRTABLE_PERSONAL_ACCESS_TOKEN: ${{ secrets.AIRTABLE_PERSONAL_ACCESS_TOKEN }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+          META_AD_ACCOUNT_ID: ${{ secrets.META_AD_ACCOUNT_ID }}
         run: |
           python meta_to_airtable.py
